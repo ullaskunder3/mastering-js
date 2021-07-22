@@ -8,7 +8,7 @@ Get Your fundamental clear
 
 ## Concepts
 
-Basic
+Basic [Readme](https://github.com/ullaskunder3/mastering-js/blob/main/Basic/Basic.md)
 
 - Variables & Datatypes (6)
 - Conditionals
