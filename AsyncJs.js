@@ -5,8 +5,7 @@ navigator.geolocation.getCurrentPosition(position =>{
     console.log(position);
 })
 console.log('this will print first before the above code');
-
- */
+*/
 
 //To resolve this issue
 // Promises in javascript
