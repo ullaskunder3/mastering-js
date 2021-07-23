@@ -159,7 +159,7 @@ with the built-in js method we can perform functions like:
 
 Changing case
 
-The string methods toLowerCase() and toUpperCase() take a string and convert all the characters to lower- or uppercase, respectively.
+The string methods `toLowerCase()` and `toUpperCase()` take a string and convert all the characters to lower- or uppercase, respectively.
 
 ```javascript
 let message = "Awesome javascript is unbelivable"
@@ -167,7 +167,7 @@ console.log(message.toLowerCase()) //awesome javascript is unbelivable
 console.log(message.toUpperCase()) //AWESOME JAVASCRIPT IS UNBELIVABLE
 ```
 
-The trim() method removes whitespace from both ends of a string.
+`The trim()` method removes whitespace from both ends of a string.
 
 ```javaScript
 const greeting = '   Hello world!   ';
@@ -180,9 +180,116 @@ console.log(greeting.trim());
 
 ```
 
-Finding a substring inside a string and extracting it
+There are two ways to access an individual character in a string. The first is the `charAt()` method:
+
+```javaScript
+let ststus = 'dev';
+console.log(status.charAt(0)); //output: d
+```
+
+`indexof()` Finding a substring inside a string and extracting it
 
 ```Javascript
 let browserType = 'mozilla';
 browserType.indexOf('zilla'); //output: 2
+```
+
+The `slice()` method extracts a section of a string and returns it as a new string, without modifying the original string.
+
+slice(beginIndex)
+slice(beginIndex, endIndex)
+
+```JavaScript
+const str = 'The quick brown fox jumps over the lazy dog.';
+
+console.log(str.slice(31));
+// expected output: "the lazy dog."
+
+console.log(str.slice(4, 19));
+// expected output: "quick brown fox"
+
+console.log(str.slice(-4));
+// expected output: "dog."
+
+console.log(str.slice(-9, -5));
+// expected output: "lazy"
+```
+
+`replace()` method
+
+```js
+"they who remain".replace('they', 'He')
+//output: He who remain 
+```
+
+### Escape sequences
+
+- `\n` :newline
+- `\\` :backslash
+- `\"` :double quote
+- `\'` :single quote
+- `\t` :tab
+- ...
+
+```js
+//single quote in between string
+"We haven\'t"
+
+//new line
+"Hello\nWorld"
+
+//usinhg tab
+"\tAwesome"
+```
+
+## Template literals (Template strings)
+
+Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.
+
+```JavaScript
+`string text`
+
+`string multi line
+ string text line 2`
+
+let myName = "Kang";
+
+`Hello, Myself ${myName}.`
+
+// Expression interpolation
+let a = 5;
+let b = 10;
+console.log('Fifteen is ' + (a + b) + ' and\nnot ' + (2 * a + b) + '.');
+// "Fifteen is 15 and
+// not 20."
+```
+
+## null
+
+The value null represents the intentional absence of any object value.
+It is one of JavaScript's primitive values and is treated as falsy for boolean operations.
+
+```javascript
+// foo does not exist. It is not defined and has never been initialized:
+foo; //ReferenceError: foo is not defined
+
+// foo is known to exist now but it has no type or value:
+var foo = null;
+foo; //null
+```
+
+## Undefined
+
+The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types
+
+```javascript
+typeof null          // "object" (not "null" for legacy reasons)
+typeof undefined     // "undefined"
+null === undefined   // false
+null  == undefined   // true
+null === null        // true
+null == null         // true
+!null                // true
+isNaN(1 + null)      // false
+isNaN(1 + undefined) // true
 ```
