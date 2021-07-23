@@ -293,3 +293,62 @@ null == null         // true
 isNaN(1 + null)      // false
 isNaN(1 + undefined) // true
 ```
+
+## Comparison Operator
+
+- `>` greater than
+- `<` less than
+- `>=` greater than or equal to
+- `<=` less than or equal to
+- `==` equality operator
+- `===` strict equality operator
+- `!=` not equal to
+- `!==` strict not equal to
+
+```JavaScript
+console.log(5 > 3);
+// expected output: true
+
+console.log(5 < 3);
+// expected output: false
+
+
+console.log(3 >= 3);
+// expected output: true
+
+console.log(5 <= 3);
+// expected output: false
+
+```
+
+### equality operator (double equal)
+
+- Check for `equality of value` not its `type` and returning a Boolean result
+- It attempts to convert(`coerces`) and compare operands that are of different types.
+
+```js
+//using double equal to
+console.log(1 == 1);
+// expected output: true
+
+console.log('hello' == 'hello');
+// expected output: true
+
+```
+
+### Strict equality [advice use strict equality]
+
+- Check for equality of value && type
+
+```Js
+//Using strict equality
+console.log(1 === 1);
+// expected output: true
+
+console.log('1' ===  1);
+// expected output: false
+
+console.log('hello' === 'hello');
+// expected output: true
+
+```
