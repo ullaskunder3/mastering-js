@@ -352,3 +352,11 @@ console.log('hello' === 'hello');
 // expected output: true
 
 ```
+
+## Conditional (ternary) Operator
+
+The conditional (ternary) operator is the only JavaScript operator that takes three operands:
+
+```js
+condition ? exprIfTrue : exprIfFalse
+```
