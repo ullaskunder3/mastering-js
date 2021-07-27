@@ -1,5 +1,33 @@
 # JavaScript Functions
 
+## Difference Between var, let, and const
+
+| Keyword |      Scope       | Hoisting | Can be Reassigned | Can be Redeclared |
+|:-------:|:----------------:|:--------:|-------------------|:-----------------:|
+|   var   | `Function scope` |    Yes   |        Yes        |        Yes        |
+|   let   |   `Block Scope`  |    NO    |        Yes        |         No        |
+|  const  |   `Block Scope`  |    No    |         No        |         No        |
+
+```DO
+A commonly accepted practice is to use const as much as possible, and let in the case of loops and reassignment. Generally, var can be avoided outside of working on legacy code.
+```
+
+## Hoisting
+
+JavaScript Hoisting refers to the process whereby the compiler allocates memory for `variable and function` declarations `prior to execution of the code`.
+
+```JavaScript
+
+    catName("Chloe");
+
+    function catName(name) {
+        console.log("My cat's name is " + name);
+    }
+    /*
+    The result of the code above is: "My cat's name is Chloe"
+    */
+```
+
 ## Functions
 
 By default, functions return `undefined`. To return any other value, the function must have a `return` statement that specifies the value to return.
@@ -109,22 +137,6 @@ function sum(a, b) {
 let sum = function(a, b) {
   return a + b;
 };
-```
-
-## Hoisting
-
-JavaScript Hoisting refers to the process whereby the compiler allocates memory for `variable and function` declarations `prior to execution of the code`.
-
-```JavaScript
-
-    catName("Chloe");
-
-    function catName(name) {
-        console.log("My cat's name is " + name);
-    }
-    /*
-    The result of the code above is: "My cat's name is Chloe"
-    */
 ```
 
 ## Scopes in Javascript
