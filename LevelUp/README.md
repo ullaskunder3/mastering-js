@@ -126,3 +126,119 @@ JavaScript Hoisting refers to the process whereby the compiler allocates memory 
     The result of the code above is: "My cat's name is Chloe"
     */
 ```
+
+## Scopes in Javascript
+
+A variable’s `scope` determines when it is and isn’t available throughout your program.
+
+In JavaScript,
+  the scope of a variable is controlled by the location of the `variable declaration`,
+  and it defines the part of the program where a particular variable is accessible.
+
+There are three ways to declare a variable in JavaScript:
+
+- By using the old `var` keyword, and by using the new `let` and `const` keywords.
+ Prior to ES6, using the `var` keyword was the only way to declare a variable, but now we can use `let` and `const`, which have stricter rules and make the code less error prone.
+
+- The three main takeaways are:
+  - `Inner scope` can always `read` values defined in an `outer parent scope`.
+
+  - `Outer scope cannot read` values defined in an `inner scope` (except when defined with `var`).
+
+  - The var scope-bleed issue can be overcome using immediately-invoked function expressions (IIFEs).
+
+## Types of Scope
+
+At the most `basic level`, there are two types of scope in JavaScript — 
+`Global Scope` and `Local Scope`.
+
+Lets explore `Lexical Scope` and `Block Scope`.
+
+Global scope:
+
+- When you open up a document and begin writing code in JavaScript, you are in the global scope.
+
+- Anything you write in the global scope — functions, variables, etc. are accessible anywhere within your JavaScript code.
+- Global variables are also available for the lifetime of your application and only deleted when the application ends
+
+```JavaScript
+    let theMadTitan = 'Thanos'
+    //its in a global scope
+
+    function functionName(){
+        console.log('local scope can call global variable: ', theMadTitan);
+        //function scope, Local Scope
+        let awesome = 'ullas';
+    }
+
+    //calling function
+    functionName()
+    //output => local scope can call global variable:  Thanos
+
+```
+
+Local scope:
+
+- Whenever we create a new scope within the global scope, we are creating a local scope. Locally scoped variables are only accessible where they are defined
+
+```JavaScript
+    let theMadTitan = 'Thanos'
+    //its in a global scope
+
+    function functionName(){
+        //function scope, Local Scope
+        let awesome = 'ullas';
+        //this awesome cant be accessed out side this function or this scope
+    }
+
+```
+
+Lexical Scope:
+
+- Lexical scope (also referred to as static scope) is the ability of an inner function to access the scope of an outer function.
+
+```JavaScript
+
+    // *GLOBAL*
+    var dog = 'Lewis';
+
+    function outerFunc(){
+        // *SCOPE 1*
+        var cat = 'Jerry';
+
+        function innerFunc(){
+            // *SCOPE 2*
+            console.log(cat); // Jerry
+            console.log(dog); // Lewis
+        }
+    }
+
+```
+
+Block Scope:
+
+- If a variable is declared inside a code block {...}, it’s only visible inside that block.
+
+```JavaScript
+
+    {
+        // local variables OR block level variable that should not be seen outside
+
+        let message = "Hello"; // only visible in this block
+        console.log(message); // Hello
+    }
+
+    console.log(message); // Error: message is not defined
+
+```
+
+## Scope Benefits
+
+Utilizing scope results in quite a few benefits, including:
+
+- `Security` — Variables and functions are only accessible where they are needed.
+
+- `Reducing Namespace Collisions` — Namespace collisions occur when two or more variables share a common name. Scoping of variables helps reduce global variables which prevents this from occurring.
+
+- `Code Reusability` — Correctly utilizing local scopes means more reusable code with fewer potential side-effects.
+Types of Scope
