@@ -59,12 +59,12 @@ function myAddition(a, b = 1) {
      at ${myAdditionFuncCalls} call: ${arguments.length} argument`);
     return a + b;
 }
-console.log('Function with two parameter (a, b=1): ',myAddition, '\n');
+console.log('Function with two parameter (a, b=1): ', myAddition, '\n');
 
-console.log('Calling function myAddition with (5 and 2): ',myAddition(5, 2), '\n');
+console.log('Calling function myAddition with (5 and 2): ', myAddition(5, 2), '\n');
 // expected output: 7
 
-console.log('Calling function myAddition with single parameter (5):',myAddition(5));
+console.log('Calling function myAddition with single parameter (5):', myAddition(5));
 // expected output: 6
 
 console.log('\n***********Function expressions**************\n');
@@ -83,9 +83,34 @@ console.log('\n***********Function expressions**************\n');
  * Remember Normal function declaration is hoisted, function expression dont!
  * hoisting: you an call the function first and then declare 
  */
-let sayHi = function() {
+let sayHi = function () {
     console.log('function expression has been called: Holaa, cómo estás');
 };
 
 //calling 
 sayHi();
+
+console.log('\n*********** ➡ Arrow Function **************\n');
+
+// Arrow function with no arguments 
+const printHello = () => {
+    console.log('hello, No argument Arrow Function is called');
+};
+printHello(); // Prints: hello
+
+// Arrow functions with a single argument 
+const checkWeight = weight => {
+    console.log(`Baggage weight : ${weight} kilograms.`);
+};
+console.log('\nSingle argument Arrow Function is called:');
+checkWeight(25) // Prints: Baggage weight : 25 kilograms.
+
+// Arrow function with two arguments 
+const sum = (firstParam, secondParam) => {
+    return firstParam + secondParam;
+};
+console.log('\nArrow function with two argument: ',sum(2, 5)); // Prints: 7 
+
+// Concise arrow functions //clean and clear in one line
+const multiply = (a, b) => a * b;
+console.log('\nArrow Function clean and concise: in single line ',multiply(2, 30)); // Prints: 60

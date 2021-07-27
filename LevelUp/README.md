@@ -112,6 +112,34 @@ Here, the function is created and assigned to the variable explicitly, just like
     //output => function expression has been called: Holaa, cómo estás
 ```
 
+## Arrow Function {!not hoisted}
+
+- Arrow function expressions were introduced in `ES6`. These expressions are `clean and concise`
+
+- The syntax for an arrow function expression does not require the function keyword and uses a `fat arrow` => to separate the parameter(s) from the body.
+
+- Arrow functions with a single parameter do not require () around the parameter list.
+
+- Arrow functions with a single expression can use the concise function body which returns the result of the expression without the return keyword.
+
+```JavaScript
+    // Arrow function with no arguments 
+    const printHello = () => { 
+        console.log('hello'); 
+    }; 
+    printHello(); // Prints: hello
+
+    // Arrow functions with a single argument 
+    const checkWeight = weight => { 
+        console.log(`Baggage weight : ${weight} kilograms.`); 
+    }; 
+    checkWeight(25); // Prints: Baggage weight : 25 kilograms.
+
+    // Concise arrow functions
+    const multiply = (a, b) => a * b; 
+    console.log(multiply(2, 2)); // Prints: 4
+```
+
 ### Function Expression vs Function Declaration
 
 Function type           | Description
