@@ -32,6 +32,10 @@ JavaScript Hoisting refers to the process whereby the compiler allocates memory 
 
 By default, functions return `undefined`. To return any other value, the function must have a `return` statement that specifies the value to return.
 
+### What is Functional Programming
+
+In most simple term, Functional Programming is a form of programming in which you can pass functions as parameters to other functions and also return them as values. In functional programming, we think and code in terms of functions.
+
 ## Function Parameters
 
 A JavaScript function can have any number of parameters.
@@ -165,6 +169,117 @@ function sum(a, b) {
 let sum = function(a, b) {
   return a + b;
 };
+```
+
+## First-Class Functions
+
+JavaScript treats functions as `first-class citizens`. That’s because in JavaScript or any other functional programming languages `functions are objects`.
+
+In JavaScript, everything you can do with other types like **object**, **string**, or **number**, you can do with functions. You can `pass them as parameters to other functions (callbacks)`, `assign them to variables` and pass them around etc. This is why functions in JavaScript are known as First-Class Functions.
+
+### Assigning Functions to Variables
+
+```JavaScript
+    const square = function(x) {
+        return x * x;
+    }
+    // prints 25
+    square(5); 
+
+    // We can also pass them around. For example:
+
+    const foo = square;
+
+    // prints 36
+    foo(6);
+```
+
+### Passing Functions as Parameters
+
+```JavaScript
+
+    function formalGreeting() {
+        console.log("How are you?");
+    }
+
+    function casualGreeting() {
+        console.log("What's up?");
+    }
+
+    function greet(type, greetFormal, greetCasual) {
+        if(type === 'formal') {
+            greetFormal();
+        } else if(type === 'casual') {
+            greetCasual();
+        }
+    }
+    // prints 'What's up?'
+    greet('casual', formalGreeting, casualGreeting);
+
+```
+
+## Higher Order Functions
+
+`Functions` that operate on other functions, either by `taking them as arguments` or by `returning them`, are called higher-order functions.
+
+```js
+//Go the code section for helper array method example 
+For example, Array.prototype.map, Array.prototype.filter and Array.prototype.reduce are some of the Higher-Order functions built into the language.
+```
+
+Array helper method [code example](./masterJs/LevelUp/BuiltInArrayCallBack.js)
+
+```JavaScript
+    //map
+    const arr1 = [1, 2, 3];
+
+    const arr2 = arr1.map(function(item) {
+        return item * 2;
+    });
+    console.log(arr2);
+```
+
+```JavaScript
+    const persons = [
+        { name: 'Peter', age: 16 },
+        { name: 'Mark', age: 18 },
+        { name: 'John', age: 27 },
+        { name: 'Jane', age: 14 },
+        { name: 'Tony', age: 24},
+    ];
+    
+    const fullAge = persons.filter(person => person.age >= 18);
+
+    console.log(fullAge);
+```
+
+```JavaScript
+    const arr = [5, 7, 1, 8, 4];
+    const sum = arr.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue;
+    });
+
+    // prints 25
+    console.log(sum);
+```
+
+## Callback Functions
+
+In JavaScript, a callback function is a function that is `passed into another function as an argument`. This function can then be invoked during the execution of that higher order function (that it is an argument of)
+
+```JavaScript
+    const isEven = (n) => {
+        return n % 2 == 0;
+    }
+    
+    let printMsg = (evenFunc, num) => {
+        const isNumEven = evenFunc(num);
+        console.log(`The number ${num} is an even number: ${isNumEven}.`)
+    }
+    
+    // Pass in isEven as the callback function
+    printMsg(isEven, 4); 
+    // Prints: The number 4 is an even number: True.
 ```
 
 ## Scopes in Javascript

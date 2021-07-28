@@ -109,8 +109,158 @@ checkWeight(25) // Prints: Baggage weight : 25 kilograms.
 const sum = (firstParam, secondParam) => {
     return firstParam + secondParam;
 };
-console.log('\nArrow function with two argument: ',sum(2, 5)); // Prints: 7 
+console.log('\nArrow function with two argument: ', sum(2, 5)); // Prints: 7 
 
 // Concise arrow functions //clean and clear in one line
 const multiply = (a, b) => a * b;
-console.log('\nArrow Function clean and concise: in single line ',multiply(2, 30)); // Prints: 60
+console.log('\nArrow Function clean and concise: in single line ', multiply(2, 30));
+// Prints: 60
+
+console.log('\n***********Higher Order Function:**************\n');
+
+/**
+ * Functions that operate on other functions, 
+ * either by taking them as arguments or by returning them, 
+ * are called higher-order functions.
+ */
+console.log(':)Function as an Argument\n');
+
+function funArgu(functionArguAsPara) {
+    functionArguAsPara();
+}
+
+function greetUser() {
+    console.log('\t👋...Helooooo, supp');
+}
+
+//passing greetUser function to another function as a parameter
+funArgu(greetUser);
+//output => Helooooo, supp
+
+console.log('🎮 Function as an Argument BattleField \n');
+
+function wornTheTeam(listen) {
+    console.log('Enemies Ahead!');
+}
+
+function notify(message, numberOfClick) {
+    for(let i = 0; i < numberOfClick; i++){
+        message();
+    }
+}
+
+//calling function which take function as an argument
+notify(wornTheTeam, 3);
+
+/**
+ * output: 
+    * Enemies Ahead!
+    * Enemies Ahead!
+    * Enemies Ahead!
+ */
+
+console.log('\n:)Returning function as a value \n');
+
+//Returning Functions as Results
+console.log('********ex 1******');
+
+function easyOne() {
+    function innerEasyOne() {
+        console.log('using "return innerEasyOne();"', innerEasyOne);
+        console.log('calls the function and returns its result');
+    }
+    return innerEasyOne();
+    //! return innerEasyOne(); calls the function innerEasyOne(),
+    // and returns its result.
+    
+}
+easyOne();
+/**output :
+ * using "return innerEasyOne();" [Function: innerEasyOne]
+ * calls the function and returns its result
+ */
+
+console.log('\n*****************see the difference*****************\n');
+
+function easyTwo() {
+    function innerEasyTwo() {
+        console.log('using "return innerEasyTwo";', innerEasyTwo);
+        console.log('returns a reference to the function which can be stored in a variable to call later');
+    }
+
+    return innerEasyTwo;
+    //return innerEasyTwo; returns a reference to the function innerEasyTwo, 
+    //which you can store in a variable to call later.
+}
+
+let testIt = easyTwo();
+testIt();
+/**output :
+ * using "return innerEasyTwo"; [Function: innerEasyTwo]
+ * returns a reference to the function which can be stored in a variable to call later
+ */
+
+//alternative style just use this 
+//use easyTwo()();
+
+console.log('\n*******ex 2*******');
+
+function iWillReturnFun (parameter) {
+    return function () {
+        return `Big 🦇 Dracula 🧛 ${parameter}`;
+    }
+}
+const returnedFun = iWillReturnFun('🕯️')
+
+console.log(returnedFun());
+// output => Big 🦇 Dracula 🧛 🕯️
+
+console.log('\n*******CallBack function *******\n');
+
+/**
+ * A callback is a function passed as an argument to another function
+ * which is then invoked inside the outer function 
+*/
+console.log('********ex 1************');
+
+function greeting(name) {
+    console.log('Hello ' + name);
+}
+
+function greetByName(callback) {
+    var name = 'ullas';
+    callback(name);
+}
+
+//passing function greet as an argument
+greetByName(greeting);
+
+console.log('The above example is a synchronous callback, as it is executed immediately.');
+
+console.log('\n********ex 2************\n');
+
+function copyArrayAndMulti2(array) {
+    let output = [];
+    for (let i = 0; i < array.length; i++) {
+        output.push(array[i] * 2);
+        console.log('test ', array[i]);
+    }
+    return output;
+}
+
+function multiBy2(input) {
+    return input * 2;
+}
+
+function copyArrayManupulation(array, callBackFun) {
+    let output = [];
+    for (let i = 0; i < array.length; i++) {
+        output.push(callBackFun(array[i]));
+    }
+    return output;
+}
+
+const myArray = [2, 4, 6];
+
+let res1 = copyArrayManupulation(myArray, multiBy2);
+console.log(res1);

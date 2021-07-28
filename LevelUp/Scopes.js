@@ -69,16 +69,24 @@ greet();
 
 console.log('\n*******************Lexical scope***********************\n');
 
-let number = 42;
-function printNumber() {
-    console.log(number);
+// Think about nested function
+
+function outerFun() {
+    let teamCall = 'Avengers'
+
+    function innerFun() {
+        let codeRed = `Iron-Man 🤖: '${teamCall}' Assemble, 🦸‍♂️, 🕷...`
+        console.log(codeRed);
+    }
+
+    innerFun();
 }
-function log() {
-    let number = 54;
-    printNumber();
-}
-// Prints 42
-log();
+//calling outer function
+console.log(`Lexical scope: 
+{Avenger} is not defined in inner(child function)
+ but still child can access its parent data\n`);
+ 
+outerFun();
 
 console.log('\n*******************scope chaining***********************\n');
 
