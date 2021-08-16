@@ -112,3 +112,64 @@ killerRabbit.speak('Awesome!');
  * to itself in the case its type and derives shared properties form its prototype 
  */
 // -> Classes
+
+function pick(arr) {
+    const idx = Math.floor(Math.random()*arr.length);
+    return arr[idx];
+}
+
+
+function getCard() {
+    const values = [ '1', '2','3','4','5','6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+    const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+    const value = pick(values);
+    const suit = pick(suits);
+    return{
+        value,
+        suit
+    };
+}
+console.log('Random Call getCard: ',getCard());
+console.log('Random Call getCard: ',getCard());
+
+console.log('************************');
+
+// Method
+// we can add function as properties on objects
+
+const math = {
+    multiply: function (x, y) {
+        return x*y;
+    },
+    divide : function (x, y) {  
+        return x/y;
+    },
+    square: function (x) {
+        return x*x;
+    }
+}
+console.log(math.multiply(2, 2));
+
+const newMath = {
+    // shorthand
+    add(x, y){
+        return x+y;
+    },
+    sub(x, y){
+        return x-y;
+    }
+}
+console.log(newMath.add(2, 2));
+
+const auth = {
+    username: 'ullas',
+    logIn(){
+        console.log('Loged in');
+    },
+    logOut(){
+        console.log('Loged in');
+    }
+}
+console.log(auth.logIn);
+auth.logIn();

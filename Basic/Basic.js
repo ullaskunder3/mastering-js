@@ -81,9 +81,9 @@ console.log('lets chack using ! operator: ', !(1 == 1));
 
 // order of percedences
 
-let num = 12;
-console.log('order of percedences: ', (!(num == 12 || num === '12' ) && num > 10));
-// ! opearator has hhigher precedences that && and ||, && has heigher precedence that ||
+// let num = 12;
+// console.log('order of percedences: ', (!(num == 12 || num === '12' ) && num > 10));
+// ! opearator has higher precedences that && and ||, && has heigher precedence that ||
 // can use () as we need
 
 console.log('*************Ternary Operator*******************');
