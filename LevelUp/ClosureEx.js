@@ -28,6 +28,20 @@ function callMe() {
 let funVar = callMe();
 funVar();
 
+console.log('********************************');
+
+function printMessage(firstPass) {
+    let lastCall = 'Call me last'
+    return function innerFun(secondPass) {
+        console.log(firstPass);
+        console.log(secondPass);
+        console.log(lastCall);
+    }
+}
+
+let varFun = printMessage('call me first');
+varFun('call me second');
+
 console.log('************* Privileged(exposed) method *******************');
 // privileged methods. 
 // In JavaScript, any exposed method defined within the closure scope is privileged.
