@@ -10,38 +10,21 @@ Get Your fundamental clear
 
 Basic [Readme](https://github.com/ullaskunder3/mastering-js/blob/main/Basic/Basic.md)
 
-- Variables & Datatypes (6)
-- Conditionals
-- Loops
-- Functions
-- Scope
-- Events
-- DOM Basic
+## Project
 
-Inter
+1. Slider [project](./Projects/SideBar/)
+2. Dice Roll [project]('./Projects/DiceRoll/)
+3. Modal [project](./Projects/modal/)
+...
 
-- DOM
-- this keyword
-- Arrays
-- Iterators
-- Objects
-- Immediately Invoke Function Expression (IIFE)
-- Classes
-- OOPS
-- Modules
+preview:
+|                                    |                                           |
+|------------------------------------|-------------------------------------------|
+|![as](./Projects/p_sc/modal.png)    |![as](./Projects/p_sc/modal_clicked.png)   |
+|![as](./Projects/p_sc/slider.png)   |![as](./Projects/p_sc/slider_clicked.png)  |
+|![as](./Projects/p_sc/dice.png)     |![as](./Projects/p_sc/dice_roll.png)       |
 
-JavaScript Helper functions
 
-Advance
-
-- AJAX
-- JavaScript Async-Await
-- Learn JavaScript: Requests
-- JavaScript Promises
-- Set
-- Map
-
----
 
 ## Links from where I'm learning JS
 

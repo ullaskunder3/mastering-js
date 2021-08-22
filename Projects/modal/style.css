@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,9 +8,14 @@
     outline: none;
     text-decoration: none;
 }
+:root{
+    --dark: #322F4F;
+    --backG: #11101C;
+    --text: #dbe3f5;
+}
 body{
     font-family: sans-serif;
-    background-color: aliceblue;
+    background-color: var(--backG);
     height: 100vh;
 
     display: flex;
@@ -16,14 +23,18 @@ body{
     justify-content: center;
 }
 .trigger{
+    font-family: 'Allison', cursive;
+    
     display: block;
     margin: auto;
     text-align: center;
     font-size: 1.92rem;
     padding: 1rem 2rem;
-    color: white;
-    background-color: #555;
+    color: var(--text);
+    background-color: var(--dark);
     border-radius: 4px;
+
+    box-shadow: 0 10px 6px -6px #dbe3f5;
 }
 .trigger:hover{
     cursor: pointer;
@@ -36,12 +47,12 @@ body{
     width: 100%;
     height: 100%;
 
-    background-color: rgba(0, 0, 0, .2);
+    background-color: #00000033;
     transition: .2s all ease;
 }
 .modal__content{
-    background-color: rgb(239, 246, 252);
-    color: rgb(46, 46, 46);
+    background-color: var(--dark);
+    color: var(--text);
     width: 80%;
     max-width: 640px;
     margin: 3rem auto;
@@ -54,6 +65,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: inset 0 10px 8px black;
 }
 @keyframes slideDown {
     0%{
@@ -69,8 +81,37 @@ body{
     display: block;
 }
 .modal__title{
+    font-family: 'Allison', cursive;
+    font-weight: 400;
     text-align: center;
-    color: #555;
+    color: white;
+    font-size: 5rem;
+    transition: color 2s ease;
+}
+.modal__title:hover{
+    color: #11101C; 
+    -webkit-text-stroke: 1px white; /* width and color */
+    cursor: pointer;
+    animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #0fa,
+        0 0 80px #0fa,
+        0 0 90px #0fa,
+        0 0 100px #0fa,
+        0 0 150px #0fa;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }
 }
 .close{
     position: absolute;
@@ -97,9 +138,11 @@ body{
 }
 form{
     background-color: rgba(85, 85, 102, 0.377);
+    border: 1px solid var(--text);
     border-radius: 3px;
 
-    margin-top: 2rem;
+    padding: 1rem 0;
+    border-radius: 6px;
 }
 input{
     padding: 1px 4px;
