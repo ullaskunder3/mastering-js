@@ -17,7 +17,7 @@ Basic [Readme](https://github.com/ullaskunder3/mastering-js/blob/main/Basic/Basi
 3. Modal [project](./Projects/modal/)
 ...
 
-preview:
+preview: sitelink[roots/](https://ullaskunder3.github.io/mastering-js/)
 |                                    |                                           |
 |------------------------------------|-------------------------------------------|
 |![as](./Projects/p_sc/modal.png)    |![as](./Projects/p_sc/modal_clicked.png)   |
