@@ -6,9 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{margin: 0; padding: 0; box-sizing: border-box; list-style-type: none; text-decoration: none;}
+        html{
+            font-size: 62.5%;
+        }
         body{
+            height: 100vh;
             display: flex;
-            
+            align-items: center;
+            justify-content: center; 
+            background-color: #112;  
+            color: white;
+            text-align: center;
+        }
+        li{
+            text-align: center;
+            background-color: black;
+            padding: 1rem 10rem;
+        }
+        li a{
+            color: white;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        li:hover{
+            text-decoration: underline;
+            background-color: transparent;
         }
     </style>
 </head>
@@ -17,14 +41,25 @@
     <!-- for module example -->
     <!-- <div id="root"></div> -->
 
+
+    <div class="container">
+        <ul>
+            <li><a href="./Projects/SideBar/index.html">SideBar</a></li>
+            <li><a href="./Projects/todo/index.html">todo</a></li>
+            <li><a href="./Projects/modal/index.html">modal</a></li>
+            <li><a href="./Projects/DiceRoll/index.html">DiceRoll</a></li>
+            <li><a href="./Projects/Accordion/index.html">Accordion</a></li>
+        </ul>
+    </div>
+
     <!-- for DOM  -->
-    <div class="elementText">
+    <!-- <div class="elementText">
         <span>Hola</span>
         <span style="display: none;">amigoes</span>
-    </div>
+    </div> -->
 
     <!-- <script src="./AsyncJs.js"></script> -->
     <!-- <script type="module" src="./modules.js"></script> -->
-    <script src="./DOM.js"></script>
+    <!-- <script src="./DOM.js"></script> -->
 </body>
 </html>
