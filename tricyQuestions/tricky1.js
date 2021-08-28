@@ -1,3 +1,18 @@
+/* This is not working
+  *  const button = document.getElementsByTagName('button')[0]
+  *  const counter = {
+  *    cnt: 0,
+  *    inc: function() {
+  *      console.log('test');
+  *      cnt++;
+  *      console.log(this.cnt);
+  *    }
+  *  };
+  * button.addEventListener('click', counter.inc(), false) 
+**/
+
+// solutions
+
 //using bind
 /* const button = document.getElementsByTagName('button')[0]
 const counter = {
@@ -16,11 +31,11 @@ const button = document.getElementsByTagName('button')[0]
 const counter = {
   cnt: 0,
   inc: function() {
-    let scopeSelf = this;
+    let selfRef = this;
     return function() {
       console.log('test');
-      scopeSelf.cnt++;
-      console.log(scopeSelf.cnt);
+      selfRef.cnt++;
+      console.log(selfRef.cnt);
     }
   }
 };
