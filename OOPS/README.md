@@ -1,5 +1,28 @@
 # Object Oriented Programming OOP ✨
 
+4 principle:
+
+- Abstraction
+- Encapsulation
+- Inheritance
+- Polymorphism
+
+## Prototypes
+
+The `prototype` is a special hidden property object that is associated with every functions and objects by default in JavaScript.
+
+Objects in JavaScript are linked to a certain prototype, by means object can access that prototype method => `Prototypal inheritance`
+
+```js
+let myArray = [11,22,33]
+console.log( myArray.at(0) )
+//output: 11
+
+/** Array.prototype is the prototype of all array objects
+ * behind its calling myArray.prototype.at(2)
+ **/
+```
+
 OOP is an enormously popular paradigm for structuring out complex code
 
 - Easy to add features and functionality
