@@ -1,4 +1,4 @@
-# Learn Modern JavaScript
+# Learn Modern javascript
 
 Get Your fundamental clear
 
